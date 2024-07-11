@@ -9,3 +9,5 @@ eureka:
     fetch-registry: false
   server:
     eviction-interval-timer-in-ms: 1000
+  instance:
+    hostname: localhost
