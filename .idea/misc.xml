@@ -12,7 +12,11 @@
         <option value="$PROJECT_DIR$/Order/pom.xml" />
         <option value="$PROJECT_DIR$/../server-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/ConfigServer/pom.xml" />
+=======
         <option value="$PROJECT_DIR$/server-gateway/pom.xml" />
+>>>>>>> b875e0b4601783cc9a07915c8bfb2658a7c4e316
       </list>
     </option>
     <option name="ignoredFiles">
@@ -21,7 +25,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

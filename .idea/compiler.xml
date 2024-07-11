@@ -12,7 +12,9 @@
         <module name="Payment" />
         <module name="User" />
         <module name="Product" />
+        <module name="ConfigServer" />
         <module name="Reporting" />
+        <module name="eureka-server" />
         <module name="Notification" />
       </profile>
     </annotationProcessing>
@@ -22,6 +24,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigServer" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="Order" options="-parameters" />

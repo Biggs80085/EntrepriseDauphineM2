@@ -1,5 +1,7 @@
-package com.example.order;
+package com.example.order.Controller;
 
+import com.example.order.Model.OrderEntity;
+import com.example.order.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

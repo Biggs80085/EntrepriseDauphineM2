@@ -1,8 +1,10 @@
-package com.example.payment;
+package com.example.payment.Service;
 
 
 
 
+import com.example.payment.Model.Payment;
+import com.example.payment.Repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
