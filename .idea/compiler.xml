@@ -7,9 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Product" />
-        <module name="Product (1)" />
+        <module name="User" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Product (1)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
