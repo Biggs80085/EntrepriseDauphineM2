@@ -2,7 +2,19 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Notification/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Notification/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Order/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Order/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Payment/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Payment/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Product/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Product/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Reporting/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Reporting/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/User/src/main/resources" type="java-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
