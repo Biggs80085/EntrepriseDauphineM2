@@ -12,7 +12,11 @@
         <option value="$PROJECT_DIR$/Order/pom.xml" />
         <option value="$PROJECT_DIR$/../server-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/EurekaServer/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/ConfigServer/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/server-gateway/pom.xml" />
+>>>>>>> b875e0b4601783cc9a07915c8bfb2658a7c4e316
       </list>
     </option>
     <option name="ignoredFiles">
