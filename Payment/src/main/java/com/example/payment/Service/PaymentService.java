@@ -3,7 +3,9 @@ package com.example.payment.Service;
 
 
 
+import com.example.payment.Model.OrderEntity;
 import com.example.payment.Model.Payment;
+import com.example.payment.Model.ProductServiceClient;
 import com.example.payment.Repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class PaymentService {
 
     @Autowired
     private PaymentRepository paymentRepository;
+
+    @Autowired
+    private ProductServiceClient productServiceClient;
 
     public List<Payment> getAllPayments() {
         return paymentRepository.findAll();
@@ -35,9 +40,10 @@ public class PaymentService {
         paymentRepository.deleteById(id);
     }
 
-    private double calculateTotalAmount(Order order) {
-        return order.getProducts().stream()
-                .mapToDouble(Product::getPrice)
+    private double calculateTotalAmount(OrderEntity order) {
+        return order.getProductIds().stream()
+                .map((orderID) ->  productServiceClient.findById(orderID))
+                .mapToDouble(product -> product.get().getPrice())
                 .sum();
     }
 }

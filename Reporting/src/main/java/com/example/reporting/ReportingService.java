@@ -3,18 +3,27 @@ package com.example.reporting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 public class ReportingService {
 
     @Autowired
-    private OrderRepository orderRepository;
+    ProductServiceClient productServiceClient;
+    @Autowired
+    OrderServiceClient orderServiceClient;
+    public List<ProductDTO> getTopSellingProducts() {
+        List<OrderDTO> orders = orderServiceClient.getOrders();
 
-    public List<Product> getTopSellingProducts() {
-        List<Order> orders = orderRepository.findAll();
-
-        Map<Product, Long> productCount = orders.stream()
-                .flatMap(order -> order.getProducts().stream())
-                .collect(Collectors.groupingBy(product -> product, Collectors.counting()));
+        Map<ProductDTO, Long> productCount = orders.stream()
+                .flatMap(order -> order.getProductIds().stream())
+                .collect(Collectors.groupingBy(productID -> {
+                    Optional<ProductDTO> productDTO =  productServiceClient.findById(productID);
+                    return productDTO.orElse(null);
+                }, Collectors.counting()));
 
         return productCount.entrySet().stream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))

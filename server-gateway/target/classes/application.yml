@@ -11,13 +11,25 @@
             predicates:
               - Path=/users/**
           - id: order-service
-            uri: http://localhost:8082/
+            uri: lb://ORDER
             predicates:
               - Path=/orders/**
-          - id: customer-service
-            uri: http://localhost:8082/
+          - id: products-service
+            uri: lb://PRODUCTS
             predicates:
-              - Path=/customers/**
+              - Path=/products/**
+          - id: payment-service
+            uri: lb://PAYMENT
+            predicates:
+              - Path=/payment/**
+          - id: reporting-service
+            uri: lb://REPORTING
+            predicates:
+              - Path=/reporting/**
+          - id: notification-service
+            uri: lb://NOTIFICATION
+            predicates:
+              - Path=/notification/**
 
   eureka:
     client:

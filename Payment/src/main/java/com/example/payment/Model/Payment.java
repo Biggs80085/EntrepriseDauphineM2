@@ -13,7 +13,7 @@ public class Payment {
     private double amount;
 
     @ManyToOne
-    private Order order;
+    private OrderEntity order;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class Payment {
         this.amount = amount;
     }
 
-    public Order getOrder() {
+    public OrderEntity getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(OrderEntity order) {
         this.order = order;
     }
 }
