@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Order" />
-        <module name="server-gateway" />
+        <module name="EurekaServer" />
         <module name="Payment" />
         <module name="User" />
         <module name="Product" />
@@ -21,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EurekaServer" options="-parameters" />
       <module name="Notification" options="-parameters" />
       <module name="Order" options="-parameters" />
       <module name="Payment" options="-parameters" />
