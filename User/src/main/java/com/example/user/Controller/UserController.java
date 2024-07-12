@@ -1,6 +1,7 @@
 package com.example.user.Controller;
 
 
+import com.example.user.DTO.ProductDTO;
 import com.example.user.Model.Auser;
 import org.springframework.http.ResponseEntity;
 import com.example.user.Service.UserService;
@@ -9,6 +10,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -26,6 +28,16 @@ public class UserController {
     public ResponseEntity<Auser> getUserById(@PathVariable Long id){
         Auser user = userService.getUserById(id);
         return ResponseEntity.ok(user);
+    }
+
+    @Operation(summary = "Search product by id")
+    @GetMapping("/find/{productId}")
+    public Optional<ProductDTO> findProduct(@PathVariable Long productId) { return userService.findProduct(productId);}
+
+    @Operation(summary = "Get recommendation")
+    @GetMapping("/recommendation")
+    public List<ProductDTO> getRecommendation() {
+        return userService.getRecommendation();
     }
 
     @Operation(summary = "Create a new user")

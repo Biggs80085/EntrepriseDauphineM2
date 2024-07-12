@@ -3,9 +3,7 @@ package com.example.payment.Service;
 
 
 
-import com.example.payment.Model.OrderEntity;
-import com.example.payment.Model.Payment;
-import com.example.payment.Model.ProductServiceClient;
+import com.example.payment.Model.*;
 import com.example.payment.Repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +16,10 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
 
-    @Autowired
+    //@Autowired
     private ProductServiceClient productServiceClient;
+    //@Autowired
+    private NotificationServiceClient notificationServiceClient;
 
     public List<Payment> getAllPayments() {
         return paymentRepository.findAll();
@@ -30,10 +30,16 @@ public class PaymentService {
     }
 
     public Payment createPayment(Payment payment) {
-        double totalAmount = calculateTotalAmount(payment.getOrder());
-        payment.setAmount(totalAmount);
-
-        return paymentRepository.save(payment);
+        try{
+            double totalAmount = calculateTotalAmount(payment.getOrder());
+            payment.setAmount(totalAmount);
+            payment.getOrder().setStatus("Accepted");
+            return paymentRepository.save(payment);
+        }catch(Exception e){
+            payment.getOrder().setStatus("Canceled");
+            notificationServiceClient.createNotification(new NotificationDTO(payment.getOrder().getCustomerId(), e.getMessage()));
+        }
+        return null;
     }
 
     public void deletePayment(Long id) {

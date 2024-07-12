@@ -4,12 +4,14 @@ import com.example.order.Model.OrderEntity;
 import com.example.order.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@Controller
 public class OrderController {
 
     @Autowired

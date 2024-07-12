@@ -12,7 +12,6 @@ public class Notification {
     private Long id;
     private String message;
     private String receiverID;
-    private String senderID;
     private String typeNotification;
 
 
@@ -35,14 +34,6 @@ public class Notification {
 
     public void setReceiverID(String receiverID) {
         this.receiverID = receiverID;
-    }
-
-    public String getSenderID() {
-        return senderID;
-    }
-
-    public void setSenderID(String senderID) {
-        this.senderID = senderID;
     }
 
     public String getTypeNotification() {

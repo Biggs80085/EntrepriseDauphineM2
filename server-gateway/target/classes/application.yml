@@ -15,13 +15,13 @@
             predicates:
               - Path=/orders/**
           - id: products-service
-            uri: lb://PRODUCTS
+            uri: lb://PRODUCT
             predicates:
               - Path=/products/**
           - id: payment-service
             uri: lb://PAYMENT
             predicates:
-              - Path=/payment/**
+              - Path=/payments/**
           - id: reporting-service
             uri: lb://REPORTING
             predicates:
@@ -29,7 +29,7 @@
           - id: notification-service
             uri: lb://NOTIFICATION
             predicates:
-              - Path=/notification/**
+              - Path=/notifications/**
 
   eureka:
     client:

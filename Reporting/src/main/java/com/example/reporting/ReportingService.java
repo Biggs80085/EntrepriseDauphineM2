@@ -11,9 +11,11 @@ import java.util.stream.Collectors;
 @Service
 public class ReportingService {
 
-    @Autowired
+    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    //@Autowired
     ProductServiceClient productServiceClient;
-    @Autowired
+    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    //@Autowired
     OrderServiceClient orderServiceClient;
     public List<ProductDTO> getTopSellingProducts() {
         List<OrderDTO> orders = orderServiceClient.getOrders();
